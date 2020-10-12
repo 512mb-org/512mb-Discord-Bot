@@ -1,7 +1,7 @@
 const { Command } = require('discord-akairo');
 const { MessageEmbed } = require('discord.js');
 const fetch = require('node-fetch');
-const { WOLFRAM_APP_ID } = require('../../config')
+const { WOLFRAM_APP_ID } = require('../../config.json')
 
 class mathCommand extends Command {
     constructor() {

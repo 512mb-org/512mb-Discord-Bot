@@ -1,5 +1,5 @@
 const { AkairoClient, CommandHandler } = require('discord-akairo');
-const { TOKEN, OWNERS, PREFIX } = require('./config');
+const { TOKEN, OWNERS, PREFIX } = require('./config.json');
 
 class FiveOneTwoMBClient extends AkairoClient {
     constructor() {
