@@ -13,7 +13,7 @@ class FiveOneTwoMBClient extends AkairoClient {
 
         this.commandHandler = new CommandHandler(this, {
             directory: './commands/',
-            prefix: '.',
+            prefix: PREFIX,
             automateCategories: true
         });
         this.commandHandler.loadAll();
