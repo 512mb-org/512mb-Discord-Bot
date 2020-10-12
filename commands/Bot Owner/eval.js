@@ -1,4 +1,5 @@
 const { Command } = require('discord-akairo');
+const { MessageEmbed } = require('discord.js');
 const { inspect } = require('util');
 // const { MessageEmbed } = require('discord.js');
 
@@ -11,13 +12,17 @@ class evalCommand extends Command {
                 {
                     id: 'evalArg',
                     type: 'string',
-                    default: null
+                    default: null,
+                    match: 'content'
                 }
             ]
         });
     }
 
     async exec(message, args) {
+        const evalEmbed = new MessageEmbed()
+            .setColor(0x2EC02A)
+
         try {
             if (args.evalArg === null) {
                 message.channel.send(`**ERR!** ${message.author} \`Cannot evaluate air!\``)
@@ -30,13 +35,9 @@ class evalCommand extends Command {
             }
         } catch(e) {
             message.channel.send(`**ERR!** ${message.author} \`${e.message}\``)
+
+
         }
-
-        /*if (args.evalArg === null) {
-            message.reply(`Please provide something to evaluate!`);
-        } else {
-
-        }*/
     }
 };
 

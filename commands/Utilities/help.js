@@ -5,10 +5,11 @@ class helpCommand extends Command {
     constructor() {
         super('help', {
             aliases: ['help'],
+            description: `This command show's you the help command}`,
             args: [
                 {
                     id: 'helpArg',
-                    type: 'string',
+                    type: 'commandAlias',
                     default: null
                 }
             ]
@@ -19,17 +20,26 @@ class helpCommand extends Command {
         if (args.helpArg === null) {
             const helpEmbed = new MessageEmbed()
             .setTitle(`Help`)
-            .setFooter(`Requested by ${message.author.tag} (${message.author.id}).`)
-            .setTimestamp()
             .setColor(0x2EC02A)
+            .setFooter(`Requested by ${message.author.tag} (${message.author.id}).`, `${message.author.avatarURL({ dyanmic: true })}`)
+            .setTimestamp()
 
             this.handler.categories.map((a, b) => {
                 if (!(b === "Bot Owner")) {
-                    helpEmbed.addField(`${b}`, a.map((c) => `\`${c.aliases[0]}\``).join(", "))
-                }
+                    helpEmbed.addField(`${b}`, a.map((c) => `\`${c.aliases[0]}\``).join(", "));
+                };
             });
                 
             message.channel.send(helpEmbed);
+        } else {
+            const specificHelpEmbed = new MessageEmbed()
+                .setTitle(`Help for ${args.helpArg}`)
+                .setColor(0x2EC02A)
+                .setDescription(`${this.handler.modules.get(`${args.helpArg}`).description}`)
+                .setFooter(`Requested by ${message.author.tag} (${message.author.id}).`, `${message.author.avatarURL({ dyanmic: true })}`)
+                .setTimestamp()
+            specificHelpEmbed.addField(`Aliases`, `\`${this.handler.modules.get('wolfram').aliases.join('`, `')}\``)
+            message.channel.send(specificHelpEmbed);
         }
 
     }

@@ -4,6 +4,7 @@ class echoCommand extends Command {
     constructor() {
         super('echo', {
             aliases: ['echo'],
+            description: 'Send a message using this bot.',
             args: [
                 {
                     id: 'echoArg',

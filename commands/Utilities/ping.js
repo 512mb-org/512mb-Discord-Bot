@@ -4,6 +4,7 @@ class pingCommand extends Command {
     constructor() {
         super('ping', {
             aliases: ['ping'],
+            description: 'Check this bot\'s heartbeat and message round trip using this command.'
         });
     }
 

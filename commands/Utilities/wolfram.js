@@ -7,6 +7,7 @@ class mathCommand extends Command {
     constructor() {
         super('wolfram', {
             aliases: ['wolfram', 'wa'],
+            description: 'Use Wolfram|Alpha\'s cool search engine to figure out math and other questions.',
             args: [
                 {
                     id: 'waArg',

@@ -6,6 +6,7 @@ class inspireCommand extends Command {
     constructor() {
         super('inspire', {
             aliases: ['inspire-me', 'inspiration', 'ime'],
+            description: 'Get a random AI Generated inspirational thought/quote.'
         });
     }
 
