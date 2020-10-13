@@ -21,7 +21,7 @@ class helpCommand extends Command {
             const helpEmbed = new MessageEmbed()
             .setTitle(`Help`)
             .setColor(0x2EC02A)
-            .setFooter(`Requested by ${message.author.tag} (${message.author.id}).`, `${message.author.avatarURL({ dyanmic: true })}`)
+            .setFooter(`Requested by ${message.author.tag} (${message.author.id})`, message.author.displayAvatarURL())
             .setTimestamp()
 
             this.handler.categories.map((a, b) => {
@@ -36,7 +36,7 @@ class helpCommand extends Command {
                 .setTitle(`Help for ${args.helpArg}`)
                 .setColor(0x2EC02A)
                 .setDescription(`${this.handler.modules.get(`${args.helpArg}`).description}`)
-                .setFooter(`Requested by ${message.author.tag} (${message.author.id}).`, `${message.author.avatarURL({ dyanmic: true })}`)
+                .setFooter(`Requested by ${message.author.tag} (${message.author.id})`, message.author.displayAvatarURL())
                 .setTimestamp()
             specificHelpEmbed.addField(`Aliases`, `\`${this.handler.modules.get('wolfram').aliases.join('`, `')}\``)
             message.channel.send(specificHelpEmbed);
