@@ -5,7 +5,7 @@ class helpCommand extends Command {
     constructor() {
         super('help', {
             aliases: ['help'],
-            description: `This command show's you the help command}`,
+            description: `This command show's you the help command`,
             args: [
                 {
                     id: 'helpArg',
@@ -38,7 +38,7 @@ class helpCommand extends Command {
                 .setDescription(`${this.handler.modules.get(`${args.helpArg}`).description}`)
                 .setFooter(`Requested by ${message.author.tag} (${message.author.id})`, message.author.displayAvatarURL())
                 .setTimestamp()
-            specificHelpEmbed.addField(`Aliases`, `\`${this.handler.modules.get('wolfram').aliases.join('`, `')}\``)
+            specificHelpEmbed.addField(`Aliases`, `\`${this.handler.modules.get(`${args.helpArg}`).aliases.join('`, `')}\``)
             message.channel.send(specificHelpEmbed);
         }
 

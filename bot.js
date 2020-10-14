@@ -1,5 +1,7 @@
 const { AkairoClient, CommandHandler } = require('discord-akairo');
 const { TOKEN, OWNERS, PREFIX } = require('./config.json');
+const ACTIVITIES = ['RAM being destroyed.', 'RAM being crushed'];
+const ACTIVITY_TYPES = ['WATCHING', 'LISTENING']
 
 class FiveOneTwoMBClient extends AkairoClient {
     constructor() {
@@ -22,10 +24,21 @@ class FiveOneTwoMBClient extends AkairoClient {
 
 const client = new FiveOneTwoMBClient();
 
+function randomActivity() {
+
+    setTimeout(function() {
+        client.user.setActivity(`${ACTIVITIES[Math.floor(Math.random() * ACTIVITIES.length)]}`, { type: `${ACTIVITY_TYPES[Math.floor(Math.random() * ACTIVITY_TYPES.length)]}` });
+
+        randomActivity();
+
+    }, 30000);
+}
+
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}! Starting to eat ram...`);
     const readyDate = new Date();
     client.channels.cache.get("764784634923843605").send(`Hello World! I am \`${client.user.tag}\`. Starting to eat ram now... \nTimestamp: \`${readyDate}\``);
+    randomActivity();
 });
 
 client.login(TOKEN);

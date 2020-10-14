@@ -18,6 +18,7 @@ class inspireCommand extends Command {
             .setColor(0x2EC02A)
             .setImage(body)
             .setFooter(`Requested by ${message.author.tag} (${message.author.id})`, message.author.displayAvatarURL())
+            .setTimestamp()
         message.channel.send(inspireembed);
     }
 };
