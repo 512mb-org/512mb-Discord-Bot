@@ -1,13 +1,12 @@
 const { Command } = require('discord-akairo');
 const { MessageEmbed, SnowflakeUtil } = require('discord.js');
 const { EMBED_COLOR } = require('../../constants.json');
-const moment = require('moment');
 
 class userinfoCommand extends Command {
     constructor() {
         super('userinfo', {
             aliases: ['userinfo', 'info', 'ui', 'i'],
-            description: 'Check a user\'s discord account info',
+            description: 'Check a user\'s discord account info.',
             args: [
                 {
                     id: 'userinfoMember',

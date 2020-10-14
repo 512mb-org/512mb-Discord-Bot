@@ -5,6 +5,8 @@ class purgeCommand extends Command {
         super('purge', {
             aliases: ['purge', 'prune', 'clear', 'p'],
             description: 'Bulk delete messages at once.',
+            clientPermissions: 'MANAGE_MESSAGES',
+            userPermissions: 'MANAGE_MESSAGES',
             args: [
                 {
                     id: 'purgeAmount',
