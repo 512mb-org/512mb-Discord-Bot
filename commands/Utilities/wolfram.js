@@ -3,7 +3,7 @@ const { MessageEmbed } = require('discord.js');
 const fetch = require('node-fetch');
 const { WOLFRAM_APP_ID } = require('../../config.json')
 
-class mathCommand extends Command {
+class wolframCommand extends Command {
     constructor() {
         super('wolfram', {
             aliases: ['wolfram', 'wa'],
@@ -35,4 +35,4 @@ class mathCommand extends Command {
 
 }
 
-module.exports = mathCommand;
+module.exports = wolframCommand;
