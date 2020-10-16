@@ -1,6 +1,6 @@
 # 512mb Discord Bot
 
-Invite the bot from this link: `Soon (TM)`
+Invite the bot from this link: `Soon (TM)` (I'll add it here in 10-30 minutes)
 
 You can host the bot yourself, but we will **not** provide any support at all for self-hosted 512mb Discord Bots.
 
