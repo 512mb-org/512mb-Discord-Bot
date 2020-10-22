@@ -19,4 +19,4 @@ class sourceCommand extends Command {
     }
 };
 
-module.exports = stealCommand;
+module.exports = sourceCommand;
