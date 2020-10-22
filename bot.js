@@ -37,7 +37,6 @@ function randomActivity() {
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}! Starting to eat ram...`);
     const readyDate = new Date();
-    client.channels.cache.get("764784634923843605").send(`Hello World! I am \`${client.user.tag}\`. Starting to eat ram now... \nTimestamp: \`${readyDate}\``);
     randomActivity();
 });
 
