@@ -10,7 +10,8 @@ class lmgtfyCommand extends Command {
             args: [
                 {
                     id: 'lmgtfyQuery',
-                    type: 'flag',
+                    type: 'string',
+                    match: 'content',
                     default: null
                 }
             ]
