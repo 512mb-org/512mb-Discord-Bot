@@ -11,7 +11,7 @@ class sourceCommand extends Command {
 
     async exec(message) {
         const sourceEmbed = new MessageEmbed()
-            .setTitle(`[512mb Discord Bot's Source Code](https://github.com/512mb-xyz/512mb-Discord-Bot)`)
+            .setTitle(`512mb Discord Bot's Source Code`, `https://github.com/512mb-xyz/512mb-Discord-Bot`)
             .setFooter(`Requested by ${message.author.tag} (${message.author.id}).`, `${message.author.avatarURL({ dynamic: true })}`)
             .setTimestamp()
         
