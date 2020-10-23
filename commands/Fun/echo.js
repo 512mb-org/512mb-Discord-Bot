@@ -20,7 +20,7 @@ class echoCommand extends Command {
             return message.channel.send(`**ERR!** ${message.author} please specify something to echo!`);
         } else {
             await message.react('✔');
-            message.channel.send(`${args.echoArg} \n** **\n*Sent by ${message.author.tag} (${message.author.id})*`)
+            message.channel.send(`${args.echoArg.replace(/@/g, "@‎")} \n** **\n*Sent by ${message.author.tag} (${message.author.id})*`)
         }
     }
 };
