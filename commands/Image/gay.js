@@ -31,7 +31,7 @@ class gayCommand extends Command {
         const ctx = canvas.getContext(`2d`);
         ctx.drawImage(img, 0, 0, 480, 480);
         ctx.drawImage(bg, 0, 0, 480, 480);
-        const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'gay.png');
+        const attachment = new Discord.MessageAttachment(canvas.toBuffer(), `gay-${message.id}.png`);
         message.channel.send(attachment);
         loader.delete({ timeout: 1500 });
     }

@@ -66,7 +66,7 @@ class changemymindCommand extends Command {
 
             wrapText(ctx, text, x, y, maxWidth, lineHeight);
 
-            const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'changemymind.png');
+            const attachment = new Discord.MessageAttachment(canvas.toBuffer(), `changemymind-${message.id}.png`);
             message.channel.send(attachment);
             loader.delete({ timeout: 1500 });
         };

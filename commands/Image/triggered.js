@@ -46,7 +46,7 @@ class triggeredCommand extends Command {
             GIF.addFrame(ctx);
         }
         GIF.finish();
-        const attachment = new Discord.MessageAttachment(GIF.out.getData(), 'triggered.gif');
+        const attachment = new Discord.MessageAttachment(GIF.out.getData(), `triggered-${message.id}.gif`);
         message.channel.send(attachment);
         loader.delete({ timeout: 1500 });
     }

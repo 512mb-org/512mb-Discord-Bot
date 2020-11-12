@@ -1,6 +1,14 @@
 module.exports = {
     "IMAGE_CHECK": "https://cdn.bongo.ninja/512mb/assets/512mb_check.png",
     "IMAGE_CROSS": "https://cdn.bongo.ninja/512mb/assets/512mb_cross.png",
+    "EMOTE_ONLINE": [
+        "<:512mb_online:776474306539421747>",
+        "776474306539421747"
+    ],
+    "EMOTE_OFFLINE": [
+        "<:512mb_offline:776474306614919218>",
+        "776474306614919218"
+    ],
     "EMOTE_CHECK": [
         "<:512mb_check:770297337863471104>",
         "770297337863471104"
