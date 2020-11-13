@@ -4,6 +4,7 @@ module.exports = {
     "WOLFRAM_APP_ID": "WOLFRAM_APP_ID_HERE",
     "KSOFT_SI_V1_API_KEY": "KSOFT_SI_V1_API_KEY_HERE",
     "UNSPLASH_ACCESS_KEY": "UNSPLASH_API_ACCESS_KEY_HERE",
+    "MONGODB_URI": "mongodb://username:password@host:port/database",
     "HASTEBIN_URL": "HASTEBIN_URL_HERE",
     "SHORT_IO": {
         "SECRET_KEY": "SHORT_IO_SECRET_KEY_HERE",

@@ -1,9 +1,7 @@
-const sqlite = require('sqlite');
-const sqlite3 = require('sqlite3');
-const { AkairoClient, CommandHandler } = require('discord-akairo');
+const { AkairoClient, CommandHandler, MongooseProvider } = require('discord-akairo');
 const { TOKEN, OWNERS, PREFIX } = require('./config');
 const { LOADING_PHRASES } = require('./constants');
-const { path } = require('./utils');
+const model = require('./model');
 
 class FiveOneTwoMBClient extends AkairoClient {
     constructor() {
@@ -18,11 +16,22 @@ class FiveOneTwoMBClient extends AkairoClient {
         this.commandHandler = new CommandHandler(this, {
             directory: './commands/',
             automateCategories: true,
-            prefix: PREFIX
+            prefix: (message) => {
+                if (message.guild) {
+                    return this.settings.get(message.guild.id, 'prefix', PREFIX);
+                }
+
+                return PREFIX;
+            }
         });
         this.commandHandler.loadAll();
         this.config = require('./config');
         this.constants = require('./constants');
+        this.settings = new MongooseProvider(model);
+    }
+    async login(token) {
+        await this.settings.init();
+        return super.login(token);
     }
 }
 
