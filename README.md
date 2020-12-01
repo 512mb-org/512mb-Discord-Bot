@@ -13,3 +13,5 @@ Steps:
 [5] `node .` or `pm2 start bot.js` <br>
 
 (c) [512mb](https://512mb.tech) 2020. This project is licensed under the MIT License.
+
+test
