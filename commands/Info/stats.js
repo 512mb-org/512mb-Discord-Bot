@@ -24,7 +24,7 @@ class statsCommand extends Command {
       const cores = os.cpus().length;
       const cpuModel = os.cpus()[0].model;
       const guild = this.client.guilds.cache.size.toLocaleString();
-      const user = this.client.guilds.cache.reduce((a, g) => a + g.memberCount, 0); message.channel.send(userCount);
+      const user = this.client.guilds.cache.reduce((a, g) => a + g.memberCount, 0);
       const channel = this.client.channels.cache.size.toLocaleString();
       const usage = prettyBytes(process.memoryUsage().heapUsed);
       const Node = process.version;
