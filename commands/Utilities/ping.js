@@ -34,7 +34,7 @@ class pingCommand extends Command {
         const wsLatency = wsPing - cfPing;
         const netLatency = cfPing;
         const totalLatency = discordLatency + wsLatency + netLatency;
-        return msg.edit(`Pong! Took ${totalLatency}ms. (Discord latency: ${discordLatency}ms. Connection latency: ${wsLatency}ms. Network latency: ${netLatency}ms.)`);
+        return msg.edit(`Pong! Took ${totalLatency}ms. (Discord latency: ${discordLatency}ms. Connection latency: ${wsLatency}ms.)`);
     }
 };
 
