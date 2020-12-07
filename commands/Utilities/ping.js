@@ -1,4 +1,5 @@
 const { Command } = require('discord-akairo');
+const req = require('@aero/centra');
 
 class pingCommand extends Command {
     constructor() {
