@@ -1,6 +1,6 @@
 # 512mb Discord Bot
 
-[Invite the bot here](https://canary.discord.com/oauth2/authorize?client_id=766615446744203285&permissions=40&scope=bot)
+[Invite the bot here](https://discord.com/oauth2/authorize?client_id=766615446744203285&permissions=40&scope=bot)
 
 You can host the bot yourself, but we will **not** provide any support at all for self-hosted 512mb Discord Bots.
 
