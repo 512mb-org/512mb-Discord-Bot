@@ -12,4 +12,4 @@ Steps:
 [4] `Replace all values in config.js.` <br>
 [5] `node .` or `pm2 start bot.js` <br>
 
-(c) [512mb](https://512mb.tech) 2020. This project is licensed under the CC0 1.0 Universal License.
+(c) [512mb](https://512mb.tech) 2020. This project is licensed under the [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).
