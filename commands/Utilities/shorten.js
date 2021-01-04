@@ -30,25 +30,14 @@ class shortenCommand extends Command {
             return message.channel.send(`**ERR!** ${message.author} Please provide a link to shorten!`);
         } else {
             if (args.slug === null) {
-                let rsurl = await centra('https://api.short.cm/links', 'POST')
-                    .header({
-                        authorization: this.client.config.SHORT_IO.SECRET_KEY
-                    })
-                    .body({ originalURL: args.longURL, domain: this.client.config.SHORT_IO.DOMAIN, allowDuplicates: false }, 'json')
-                    .json();
-
-                message.channel.send(`${message.author} ${rsurl.shortURL}`);
+                let rsurl = await centra(`https://512mb.cf/api/new?url=${args.longURL}`, 'GET').json();
+                message.channel.send(`${message.author} ${rsurl.shortUrl}`);
             } else {
-                let rsurl = await centra('https://api.short.cm/links', 'POST')
-                    .header({
-                        authorization: this.client.config.SHORT_IO.SECRET_KEY
-                    })
-                    .body({ originalURL: args.longURL, domain: this.client.config.SHORT_IO.DOMAIN, allowDuplicates: false, path: args.slug }, 'json')
-                    .json();
-                if (rsurl.success == false && rsurl.error === "Link already exists") {
+                let rsurl = await centra(`https://512mb.cf/api/new?url=${args.longURL}&slug=${args.slug}`, 'GET').json();
+                if (rsurl.status != 200 && rsurl.message == 'This Slug has already been taken!') {
                     return message.channel.send(`**ERR!** ${this.client.constants.EMOTE_CROSS[0]} ${message.author} The slug \`${args.slug}\` already exists!`);
                 } else {
-                    return message.channel.send(`${message.author} ${rsurl.shortURL}`);
+                    return message.channel.send(`${message.author} ${rsurl.shortUrl}`);
                 }
 
             }
