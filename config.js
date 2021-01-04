@@ -6,10 +6,6 @@ module.exports = {
     "UNSPLASH_ACCESS_KEY": "UNSPLASH_API_ACCESS_KEY_HERE",
     "MONGODB_URI": "mongodb://username:password@host:port/database",
     "HASTEBIN_URL": "HASTEBIN_URL_HERE",
-    "SHORT_IO": {
-        "SECRET_KEY": "SHORT_IO_SECRET_KEY_HERE",
-        "DOMAIN": "SHORT_IO_DOMAIN_HERE"
-    },
     "CLIENT_ID": "DISCORD_BOT_CLIENT_ID_HERE",
     "PREFIX": "BOT_PREFIX_HERE",
     "OWNERS": ["OWNER_ID_HERE"]
