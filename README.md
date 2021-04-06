@@ -1,4 +1,6 @@
-# 512mb Discord Bot
+# ⚠ This project has been deprecated as I have no interest in continuing it.
+
+## 512mb Discord Bot
 
 [Invite the bot here](https://discord.com/oauth2/authorize?client_id=766615446744203285&permissions=40&scope=bot)
 
